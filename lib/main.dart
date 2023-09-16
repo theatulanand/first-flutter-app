@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'registration_page.dart'; // Import the registration page
+import 'registration_page.dart'; 
 
 void main() {
   runApp(
@@ -8,7 +8,7 @@ void main() {
         builder: (context) => Scaffold(
           backgroundColor: Color(0xFFFFF6C4),
           // appBar: AppBar(
-          //   title: Text('SAURYA'),
+          //   title: Text('SHAURYA'),
           // ),
           body: Center(
             child: Column(
@@ -61,8 +61,8 @@ void main() {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
-                          Colors.transparent, // Make the button transparent
-                      elevation: 0, // Remove button shadow
+                          Colors.transparent, 
+                      elevation: 0, 
                     ),
                     child: const Text(
                       "Register",

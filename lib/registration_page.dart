@@ -22,8 +22,8 @@ class RegistrationPage extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
-                          width: 1.0, // Width of the border
-                          color: Color(0xFF000000), // Color of the border
+                          width: 1.0, 
+                          color: Color(0xFF000000), 
                         ),
                       ),
                       labelText: 'Name',
@@ -37,8 +37,8 @@ class RegistrationPage extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
-                          width: 1.0, // Width of the border
-                          color: Color(0xFF000000), // Color of the border
+                          width: 1.0, 
+                          color: Color(0xFF000000), 
                         ),
                       ),
                       labelText: 'Email',
@@ -52,8 +52,8 @@ class RegistrationPage extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
-                          width: 1.0, // Width of the border
-                          color: Color(0xFF000000), // Color of the border
+                          width: 1.0,
+                          color: Color(0xFF000000), 
                         ),
                       ),
                       labelText: 'Whatsapp Number',
@@ -67,8 +67,8 @@ class RegistrationPage extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
-                          width: 1.0, // Width of the border
-                          color: Color(0xFF000000), // Color of the border
+                          width: 1.0, 
+                          color: Color(0xFF000000), 
                         ),
                       ),
                       labelText: 'College Name',
