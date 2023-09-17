@@ -1,14 +1,19 @@
 import 'dart:async';
-
+import 'quiz_page.dart';
 import 'package:flutter/material.dart';
 
 class TimerPage extends StatefulWidget {
+  const TimerPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _TimerPageState createState() => _TimerPageState();
 }
 
 class _TimerPageState extends State<TimerPage> {
-  Duration _remainingTime = Duration(days: 3);
+  Duration _remainingTime =
+      const Duration(seconds: 10); 
+  bool _timerExpired = false; 
 
   @override
   void initState() {
@@ -23,6 +28,7 @@ class _TimerPageState extends State<TimerPage> {
           _remainingTime -= Duration(seconds: 1);
         } else {
           timer.cancel();
+          _timerExpired = true; // Set timerExpired to true when the timer ends
         }
       });
     });
@@ -67,14 +73,28 @@ class _TimerPageState extends State<TimerPage> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            Text(
-              '${_formatDuration(_remainingTime)}',
-              style: const TextStyle(
-                fontSize: 36, 
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF4D3E29),
-              ),
-            ),
+            _timerExpired
+                ? ElevatedButton(
+                    onPressed: () {
+                      // Navigate to the QuizPage when the "Start Quiz" button is clicked
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const QuizPage(), // Replace with your QuizPage widget
+                        ),
+                      );
+                    },
+                    child: const Text("Start Quiz"),
+                  )
+                : Text(
+                    _formatDuration(_remainingTime),
+                    style: const TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF4D3E29),
+                    ),
+                  ),
           ],
         ),
       ),
@@ -82,10 +102,9 @@ class _TimerPageState extends State<TimerPage> {
   }
 
   String _formatDuration(Duration duration) {
-    final hours = duration.inHours.remainder(24);
     final minutes = duration.inMinutes.remainder(60);
     final seconds = duration.inSeconds.remainder(60);
 
-    return '$hours:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+    return '$minutes:${seconds.toString().padLeft(2, '0')}';
   }
 }
